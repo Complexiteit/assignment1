@@ -33,6 +33,12 @@ We cannot use the Master Theorem because $T(n)$ does not match the form $T(n) = 
 	\draw (11) -- (23);
 \end{tikzpicture}
 
+$\begin{aligned}
+	n &= \frac{1}{1}n &= (\frac{5}{6})^0 n\\
+	\frac{n}{2} + \frac{n}{3} = \frac{3n}{6} + \frac{2n}{6} = \frac{5n}{6} &= \frac{5}{6}n &= (\frac{5}{6})^1 n\\
+	\frac{n}{4} + \frac{n}{6} + \frac{n}{6} + \frac{n}{9} = \frac{54n}{216} + 2\frac{36n}{216} + \frac{24n}{216} = \frac{150n}{216} &= \frac{25}{36}n &= (\frac{5}{6})^2 n\\ 
+\end{aligned}$
+
 # 2
 Given $T(n) = 5T(\frac{n}{2}) + \Theta(n^2)$, we want to prove that $T(n) = O(n^2 \sqrt{n})$ and $T(n) = \Omega(n^2 \log n)$.
 
