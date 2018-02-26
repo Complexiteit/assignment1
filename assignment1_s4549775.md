@@ -4,12 +4,34 @@ author: Hendrik Werner s4549775
 date: \today
 fontsize: 12pt
 geometry: margin=5em
+header-includes:
+	- \usepackage{tikz}
 ---
 
 # 1
 Given $T(n) = T(\frac{n}{2}) + T(\frac{n}{3}) + \Theta(n)$, we want to prove that $T(n) = O(n)$.
 
-We cannot use the Master Theorem because $T(n)$ does not match the form $T(n) = aT(\frac{n}{b}) + f(n)$.
+We cannot use the Master Theorem because $T(n)$ does not match the form $T(n) = aT(\frac{n}{b}) + f(n)$, so we draw a recursion tree:
+
+\begin{tikzpicture}
+	\node (00) at (0, 0) {T(n)};
+	\node[anchor=west] (d0) at (5, 0) {n};
+	\node (10) at (-2, -1) {$T(\frac{n}{2})$};
+	\node (11) at (2, -1) {$T(\frac{n}{3})$};
+	\node[anchor=west] (d1) at (5, -1) {$\frac{n}{2} + \frac{n}{3}$};
+	\node (20) at (-3, -2) {$T(\frac{n}{4})$};
+	\node (21) at (-1, -2) {$T(\frac{n}{6})$};
+	\node (22) at (1, -2) {$T(\frac{n}{6})$};
+	\node (23) at (3, -2) {$T(\frac{n}{9})$};
+	\node[anchor=west] (d2) at (5, -2) {$\frac{n}{4} + \frac{n}{6} + \frac{n}{6} + \frac{n}{9}$};
+
+	\draw (00) -- (10);
+	\draw (00) -- (11);
+	\draw (10) -- (20);
+	\draw (10) -- (21);
+	\draw (11) -- (22);
+	\draw (11) -- (23);
+\end{tikzpicture}
 
 # 2
 Given $T(n) = 5T(\frac{n}{2}) + \Theta(n^2)$, we want to prove that $T(n) = O(n^2 \sqrt{n})$ and $T(n) = \Omega(n^2 \log n)$.
