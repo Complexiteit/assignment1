@@ -39,6 +39,18 @@ $\begin{aligned}
 	\frac{n}{4} + \frac{n}{6} + \frac{n}{6} + \frac{n}{9} = \frac{54n}{216} + 2\frac{36n}{216} + \frac{24n}{216} = \frac{150n}{216} &= \frac{25}{36}n &= (\frac{5}{6})^2 n\\ 
 \end{aligned}$
 
+So our induction hypothesis is that $T(n) = cn \sum_{i = 0}^\infty (\frac{5}{6})^i = \frac{1}{1 - \frac{5}{6}}cn = \frac{1}{\frac{1}{6}}cn = 6cn, n > N$. We need to prove the hypothesis by strong induction on $n$:
+
+$\begin{aligned}
+	T(1) &= 1 + 1 + 1 \leq 6 * c * 1, c = 1\\
+	T(n) &= T(\frac{n}{2}) + T(\frac{n}{3}) + cn\\
+	&\stackrel{IH}{\leq} 6c\frac{n}{2} + 6c\frac{n}{3} + cn\\
+	&= 3cn + 2cn + cn\\
+	&= 6cn\\
+\end{aligned}$
+
+We have proven that $T(n) = 6cn$, so it follows that $T(n) = O(n)$.
+
 # 2
 Given $T(n) = 5T(\frac{n}{2}) + \Theta(n^2)$, we want to prove that $T(n) = O(n^2 \sqrt{n})$ and $T(n) = \Omega(n^2 \log n)$.
 
