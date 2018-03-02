@@ -62,7 +62,11 @@ $\begin{aligned}
 	&= O(n^2) & \epsilon &= \log_2 5 - 2\\
 \end{aligned}$
 
-The requirement for the first case is given, so we can conclude that $T(n) = \Theta(n^{\log_2 5})$
+The requirement for the first case is given, so we can conclude that $T(n) = \Theta(n^{\log_2 5})$. What we want to prove is $T(n) = O(n^2 \sqrt{n})$, and $T(n) = \Omega(n^2 \log n)$.
+
+Per the definition of $\Theta$: $T(n) = \Theta(n^{\log_2 5}) \rightarrow T(n) = O(n^{\log_2 5}) \land T(n) = \Omega(n^{\log_2 5})$.
+
+$O(n^2 \sqrt{n}) = O(n^{2.5}) > O(n^{2.322}) \approx O(n^{\log_2 5})$, so we can conclude that $T(n) = O(n^2 \sqrt{n})$.
 
 # 3
 Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \log n})$.
