@@ -71,5 +71,25 @@ $O(n^2 \sqrt{n}) = O(n^{2.5}) > O(n^{2.322}) \approx O(n^{\log_2 5})$, so we can
 # 3
 Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \log n})$.
 
+\begin{tikzpicture}
+	\node at (0, 0) (00) {$T(n)$};
+	\node[anchor=west] at (5, 0) (d0) {$n$};
+	\node at (-2, -1) (10) {$T(n - 1)$};
+	\node at (2, -1) (11) {$T(n - 1)$};
+	\node[anchor=west] at (5, -1) (d1) {$2(n - 1)$};
+	\node at (-3, -2) (20) {$T(n - 2)$};
+	\node at (-1, -2) (21) {$T(n - 2)$};
+	\node at (1, -2) (22) {$T(n - 2)$};
+	\node at (3, -2) (23) {$T(n - 2)$};
+	\node[anchor=west] at (5, -2) (d2) {$4(n - 2)$};
+
+	\draw (00) -- (10);
+	\draw (00) -- (11);
+	\draw (10) -- (20);
+	\draw (10) -- (21);
+	\draw (11) -- (22);
+	\draw (11) -- (23);
+\end{tikzpicture}
+
 # 4
 Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$.
