@@ -68,6 +68,14 @@ Per the definition of $\Theta$: $T(n) = \Theta(n^{\log_2 5}) \rightarrow T(n) = 
 
 $O(n^2 \sqrt{n}) = O(n^{2.5}) > O(n^{2.322}) \approx O(n^{\log_2 5})$, so we can conclude that $T(n) = O(n^2 \sqrt{n})$.
 
+We need to find an $N$ such that $\forall n > N: n^2 \log n < n^{\log 5}$. To do this we solve $f(n) = n^2 \log n = n^{\log 5} = g(n)$.
+
+$f(0) = 0 = g(0)$
+
+Now we take a point to the right of that intersection, for example $n = 1$: $f(1) = 1^2 \log 1 = 0 < 1 = 1^{\log 5} = g(n)$. If we find 1 additional intersection of $f$ and $g$ to the right of $n = 1$, for $n = N$, we can conclude $\forall n > N: f(n) < g(n)$.
+
+I don't know how to find the second intersection manually, so I used my calculator, which found a second intersection at $n \approx 1515.1791$, so $T(n) = \Omega(n^2 \log n)$.
+
 # 3
 Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \log n})$.
 
