@@ -93,3 +93,21 @@ Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \lo
 
 # 4
 Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$.
+
+Induction hypothesis: $T(n) \leq cn \log n$.
+
+$\begin{aligned}
+	T(n) &= T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n\\
+	&\stackrel{IH}{\leq} c(\frac{n}{3} \log \frac{n}{3}) + c(\frac{2n}{3} \log \frac{2n}{3}) + 5n\\
+	&= \frac{cn}{3} \log \frac{n}{3} + \frac{2cn}{3} \log \frac{2n}{3} + 5n\\
+	&= \frac{1}{3} cn \log \frac{n}{3} + \frac{2}{3} cn \log \frac{2n}{3} + 5n\\
+	&= \frac{1}{3}cn(\log n - \log 3) + \frac{2}{3}cn(\log(2n) - \log 3) + 5n\\
+	&= \frac{1}{3}cn(\log n - \log 3) + \frac{2}{3}cn(\log 2 + \log n - \log 3) + 5n\\
+	&= cn(\log n + \frac{2}{3} \log 2 - \log 3)\\
+	&= cn(\log n + \frac{2}{3} - \log 3)\\
+	&= cn \log n + cn \frac{2}{3} - cn \log 3\\
+	&\approx cn \log n - 0.918 cn\\
+	&\leq cn \log n\\
+\end{aligned}$
+
+We have proven that $T(n) = O(n \log n)$.
