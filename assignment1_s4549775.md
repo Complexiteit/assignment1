@@ -106,7 +106,7 @@ $\begin{aligned}
 \end{aligned}$
 
 # 4
-Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$.
+Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$. We cannot use the Master Theorem, because $T(n)$ does not match the form $T(n) = aT(\frac{n}{b}) + f(n)$.
 
 Induction hypothesis: $T(n) \leq cn \log n$.
 
