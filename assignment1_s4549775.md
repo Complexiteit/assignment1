@@ -77,7 +77,7 @@ Now we take a point to the right of that intersection, for example $n = 1$: $f(1
 I don't know how to find the second intersection manually, so I used my calculator, which found a second intersection at $n \approx 1515.1791$, so $T(n) = \Omega(n^2 \log n)$.
 
 # 3
-Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \log n})$.
+Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \log n})$. We cannot use the Master Theorem, because $T(n)$ does not match the form $T(n) = aT(\frac{n}{b}) + f(n)$.
 
 \begin{tikzpicture}
 	\node at (0, 0) (00) {$T(n)$};
