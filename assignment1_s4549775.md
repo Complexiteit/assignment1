@@ -105,6 +105,16 @@ $\begin{aligned}
 	4(n - 2) &= 2^2(n - 2)\\
 \end{aligned}$
 
+We take as our induction hypothesis: $T(n) \leq 2^{n + \log n}$.
+
+$\begin{aligned}
+	T(n) &= 2T(n - 1) + cn\\
+	&\stackrel{IH}{\leq} 2c*2^{(n - 1) + \log(n - 1)} + cn\\
+	&= c*2^{n + \log(n - 1)} + cn\\
+\end{aligned}$
+
+If we take $c = 1, f(n) = 2^{n + \log n}, g(n) = 2^{n + \log (n - 1)} + n$, then $f(2) = 2^{2 + \log 2} = 8 > 4 = 2^{2 + \log 1} + 2 = g(2)$. So $\forall n > 1: f(n) > g(n)$, which leads to the conclusion $T(n) = O(2^{n + \log n})$.
+
 # 4
 Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$. We cannot use the Master Theorem, because $T(n)$ does not match the form $T(n) = aT(\frac{n}{b}) + f(n)$.
 
