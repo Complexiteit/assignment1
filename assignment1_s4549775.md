@@ -99,6 +99,12 @@ Given $T(n) = 2T(n - 1) + \Theta(n)$, we want to prove that $T(n) = O(2^{n + \lo
 	\draw (11) -- (23);
 \end{tikzpicture}
 
+$\begin{aligned}
+	n &= 2^0(n - 0)\\
+	2(n - 1) &= 2^1(n - 1)\\
+	4(n - 2) &= 2^2(n - 2)\\
+\end{aligned}$
+
 # 4
 Given $T(n) = T(\frac{n}{3}) + T(\frac{2n}{3}) + 5n$, we want to prove that $T(n) = O(n \log n)$.
 
